@@ -48,29 +48,14 @@ def _load_creators():
 
 
 _DEFAULT_CREATORS = [
-    # 抖音：platform_uid 是抖音号，需先搜索解析成 sec_uid
-    ("douyin", "959447785"),
-    ("douyin", "xugecj"),
-    ("douyin", "JX_LD"),
-    # 小红书：platform_uid 是小红书号，需搜索解析成 user_id + xsec_token
-    ("xhs", "cfawen"),
-    ("xhs", "95659729208"),
-    ("xhs", "27218252238"),
-    ("xhs", "881402332"),
-    ("xhs", "26502641704"),
-    ("xhs", "dawenhao"),
-    # 雪球：platform_uid 直接就是主页数字 ID，无需登录
-    ("xueqiu", "7143769715"),
-    # 微博：platform_uid 是主页数字 ID，但需要登录态
-    ("weibo", "1644101945"),
-    ("weibo", "1560906700"),
-    ("weibo", "1025911070"),
-    ("weibo", "7943876498"),
-    ("weibo", "1645776681"),
-    ("weibo", "7948230240"),
-    # 微信公众号：2026-09-14 决定不做。原因见文件末尾 fetch_wechat 的注释——
-    # 腾讯没有任何「按公众号拉最新文章」的开放接口，登录态也解不开这个锁，
-    # 搜狗微信是唯一免登录入口但索引滞后数月，拿不到 T-1 内容等同于无效。
+    # 示例占位：真实清单放 data/creators.json（git 忽略）。platform 取值：
+    #   douyin（抖音号） / xhs（小红书号） / xueqiu（雪球数字ID） / weibo（微博主页数字ID）
+    # 微信公众号不可行：腾讯无「按公众号拉文章」的开放接口，登录态也解不开；
+    # 搜狗微信是唯一免登录入口但索引滞后数月，拿不到 T-1 内容等同无效（详见 fetch_wechat 注释）。
+    # ("douyin", "123456789"),
+    # ("xhs", "your_xhs_id"),
+    # ("xueqiu", "12345678"),
+    # ("weibo", "1234567890"),
 ]
 
 CREATORS = _load_creators()

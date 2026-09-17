@@ -1,0 +1,15 @@
+# 个人数据与运行产物 —— 一律不入库
+config/targets.json
+data/
+reports/
+*.log
+.wbapp_*.genie
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 系统与编辑器
+.DS_Store
+.workbuddy/
